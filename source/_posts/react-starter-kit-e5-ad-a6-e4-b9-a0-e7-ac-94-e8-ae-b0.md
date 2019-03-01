@@ -14,9 +14,9 @@ tags:
 
 HTML代码
 
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>React test</title>
@@ -25,9 +25,8 @@ HTML代码
     <script src="lib/react-dom.js"></script>
     <script src="lib/browser.min.js"></script>
 </head>
-
 <body>
-    <div id="container1"></div>
+	<div id="container1"></div>
     <div id="container2"></div>
     <div id="container3"></div>
     <div id="container4"></div>
@@ -39,20 +38,22 @@ HTML代码
     <div id="container10"></div>
     <script src="react_test.js" type="text/babel"></script>
 </body>
-
 </html>
+```
+
+
 
 * * *
 
 JS代码
 
+```js
 const container1 = document.getElementById('container1')
 const container2 = document.getElementById('container2')
 const container3 = document.getElementById('container3')
 const container4 = document.getElementById('container4')
 const container5 = document.getElementById('container5')
 const container6 = document.getElementById('container6')
-
 
 //1 'Hello' + name
 function Welcome(props) {
@@ -73,8 +74,9 @@ var Elapsed = React.createClass({
         var message =
             'React has been successfully running for ' + seconds + ' seconds.';
 
-        return <p > { message } < /p>;
-    }
+​    return <p > { message } < /p>;
+}
+
 });
 
 var start = new Date().getTime();
@@ -116,7 +118,6 @@ ReactDOM.render( < Counter / > ,
     container3
 );
 
-
 //4 流逝时间计时器（ES6写法）
 
 class ExampleApplication extends React.Component {
@@ -124,10 +125,11 @@ class ExampleApplication extends React.Component {
         var elapsed = Math.round(this.props.elapsed / 100);
         var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0');
         var message =
-            \`React has been successfully running for ${seconds} seconds.\`;
+            `React has been successfully running for ${seconds} seconds.`;
 
-        return <p > { message } < /p>;
-    }
+​    	return <p > { message } < /p>;
+}
+
 }
 var start = new Date().getTime();
 setInterval(() => {
@@ -135,7 +137,6 @@ setInterval(() => {
         container4
     );
 }, 50);
-
 
 //5 实时求解一元二次方程
 
@@ -169,6 +170,7 @@ var QuadraticCalculator = React.createClass({
     var x1 = (-b + root) / denominator;
     var x2 = (-b - root) / denominator;
     return (
+
       <div>
         <strong>
           <em>ax</em><sup>2</sup> + <em>bx</em> + <em>c</em> = 0
@@ -190,7 +192,8 @@ var QuadraticCalculator = React.createClass({
           x: <strong>{x1}, {x2}</strong>
         </p>
       </div>
-    );
+
+​    );
   }
 });
 
@@ -198,7 +201,6 @@ ReactDOM.render(
   <QuadraticCalculator />,
   container5
 );
-
 
 //6 调用React组件CSSTransitionGroup制作动画效果
 
@@ -248,11 +250,15 @@ ReactDOM.render(
 <AnimateDemo />,
 container6
 );
+```
+
+
 
 * * *
 
 CSS代码（仅在例6中使用）
 
+```css
 .example-enter,
 .example-leave {
   -webkit-transition: all .25s;
@@ -297,3 +303,5 @@ CSS代码（仅在例6中使用）
   transition: all .25s; /* TODO: make this a move animation */
   width: 128px;
 }
+```
+

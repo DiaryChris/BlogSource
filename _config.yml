@@ -5,10 +5,10 @@
 # Site
 title: Diary's Blog
 subtitle:
-description:
+description: WHAT A NICE DAY
 keywords:
 author: Diary
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -40,7 +40,7 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace:
   

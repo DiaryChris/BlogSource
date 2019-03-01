@@ -14,6 +14,7 @@ _所有代码均由Microsoft Visual Studio 2015编译通过_      
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -45,6 +46,7 @@ void main()
     cout << "最大子列和为：" << sum << "\\n";
     system("pause");
 }
+```
 
    
 
@@ -52,6 +54,7 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -101,6 +104,7 @@ void main()
     maxSubSumPrint(a, n);
     system("pause");
 }
+```
 
    
 
@@ -108,6 +112,7 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -237,6 +242,7 @@ void main()
     printPoly(pmult);
     system("pause");
 }
+```
 
    
 
@@ -244,6 +250,7 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -331,11 +338,15 @@ void main()
 }
 
    
+```
+
+
 
 #### 判断一组数是否为可能的出栈结果
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -413,11 +424,15 @@ void main()
 }
 
    
+```
+
+
 
 #### 递归法判断树的同构
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -519,11 +534,15 @@ void main()
 }
 
    
+```
+
+
 
 #### 层序遍历打印叶子结点
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -634,5 +653,10 @@ void main()
     printLeaf(tree, root);
     system("pause");
 }
+```
 
-      2016年3月
+      
+
+
+
+2016年3月

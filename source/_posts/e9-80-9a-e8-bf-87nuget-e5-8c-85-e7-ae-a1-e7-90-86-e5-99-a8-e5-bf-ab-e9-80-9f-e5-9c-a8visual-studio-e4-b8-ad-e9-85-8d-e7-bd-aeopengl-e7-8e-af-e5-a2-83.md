@@ -8,4 +8,7 @@ date: 2018-10-15 22:28:43
 tags:
 ---
 
-    PM> Install-Package nupengl.core -Version 0.1.0.1
+```shell
+PM> Install-Package nupengl.core -Version 0.1.0.1
+```
+
