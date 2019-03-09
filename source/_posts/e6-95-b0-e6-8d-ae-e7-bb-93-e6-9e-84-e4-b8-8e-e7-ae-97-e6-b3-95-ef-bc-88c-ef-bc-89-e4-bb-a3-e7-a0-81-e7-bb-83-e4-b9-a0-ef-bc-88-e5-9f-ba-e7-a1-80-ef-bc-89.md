@@ -14,6 +14,7 @@ _所有代码均由Microsoft Visual Studio 2015编译通过_      
 
  
 
+```c++
 #include<iostream>
 #include<math.h>
 using namespace std;
@@ -47,6 +48,7 @@ float sinx(float x)
     }
     return result;
 }
+```
 
    
 
@@ -54,6 +56,7 @@ float sinx(float x)
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -70,11 +73,12 @@ void main()
         f2 = f3;
         if (i % 5 == 0)
         {
-            cout << "\\n";
+            cout << "\n";
         }
     }
     system("pause");
 }
+```
 
    
 
@@ -82,6 +86,7 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -93,7 +98,7 @@ void main()
     cin >> a >> b;
     a0 = a, b0 = b;
     if (a <= 0 || b <= 0) {
-        cout << "只能计算正整数！\\n";
+        cout << "只能计算正整数！\n";
     }
     else {
         while (a%b != 0) {
@@ -101,10 +106,11 @@ void main()
             a = b;
             b = temp;
         }
-        cout << a0 << "与" << b0 << "的最大公约数为" << b << "\\n";
+        cout << a0 << "与" << b0 << "的最大公约数为" << b << "\n";
     }
     system("pause");
 }
+```
 
    
 
@@ -112,6 +118,7 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -119,7 +126,7 @@ void main()
 {
     int n;
     int result=1;
-    cout << "请输入正整数n\\n";
+    cout << "请输入正整数n\n";
     cin >> n;
     if (n <= 0) {
         cout << "不是正整数！";
@@ -128,10 +135,11 @@ void main()
         for (; n > 0; n--) {
             result *= n;
         }
-        cout << "n！=" << result << "\\n";
+        cout << "n！=" << result << "\n";
     }
     system("pause");
 }
+```
 
    
 
@@ -139,6 +147,7 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -153,17 +162,18 @@ void main()
 {
     int n;
     int result;
-    cout << "请输入正整数n\\n";
+    cout << "请输入正整数n\n";
     cin >> n;
     if (n <= 0) {
         cout << "不是正整数！";
     }
     else {
         result=x(n);
-        cout << "n！=" << result << "\\n";
+        cout << "n！=" << result << "\n";
     }
     system("pause");
 }
+```
 
    
 
@@ -171,6 +181,7 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -187,11 +198,12 @@ void main()
     {
         cout << setw(10) << fib(i);
         if (i % 5 == 0) {
-            cout << "\\n";
+            cout << "\n";
         }
     }
     system("pause");
 }
+```
 
    
 
@@ -199,6 +211,7 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -208,7 +221,7 @@ void hanio(int n ,char a , char b , char c ,int &i)
         return;
     }
     hanio(n - 1, a, c, b, i);
-    cout << "移动第" << n << "个盘 从" << a << "柱到" << c << "柱\\n";
+    cout << "移动第" << n << "个盘 从" << a << "柱到" << c << "柱\n";
     i++;
     hanio(n - 1, b, a, c, i);
     return;
@@ -219,9 +232,10 @@ void main()
     cout << "请输入汉诺塔总盘数：";
     cin >> n;
     hanio(n,'A','B','C',steps);
-    cout << "总步数：" << steps << "步\\n";
+    cout << "总步数：" << steps << "步\n";
     system("pause");
 }
+```
 
    
 
@@ -229,36 +243,38 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
 void main()
 {
-    int prime\[49\];
+    int prime[49];
     for (int i = 0; i < 49; i++) {
-        prime\[i\] = 3 + 2 * i;
+        prime[i] = 3 + 2 * i;
     }
     for (int i = 0; i < 4; i++) {
-        if (prime\[i\]) {
+        if (prime[i]) {
             for (int j = i + 1; j < 49; j++) {
-                if (prime\[j\] % prime\[i\] == 0) {
-                    prime\[j\] = 0;
+                if (prime[j] % prime[i] == 0) {
+                    prime[j] = 0;
                 }
             }
         }
     }
     int j = 0;
     for (int i = 0; i < 49; i++) {
-        if (prime\[i\] != 0) {
-            cout << prime\[i\] << setw(10);
+        if (prime[i] != 0) {
+            cout << prime[i] << setw(10);
             j++;
         }
         if (j != 0 && j % 5 == 0) {
-            cout << "\\n";
+            cout << "\n";
         }
     }
     system("pause");
 }
+```
 
    
 
@@ -266,34 +282,36 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 #define N 100
 using namespace std;
 void main()
 {
-    float x\[N\], sum = 0, ave;
+    float x[N], sum = 0, ave;
     int i = 0;
-    cout << "请输入学生成绩，以负数结束\\n";
+    cout << "请输入学生成绩，以负数结束\n";
     do {
-        cin >> x\[i\];
-        sum += x\[i\];
-    } while (x\[i++\] >= 0 && i < N);
+        cin >> x[i];
+        sum += x[i];
+    } while (x[i++] >= 0 && i < N);
     if (i == N) {
         ave = sum / i;
     }
     else {
-        ave = (sum - x\[--i\]) / i;
+        ave = (sum - x[--i]) / i;
     }
-    cout << "共输入" << i << "个学生    平均成绩" << ave << "分\\n\\n";
+    cout << "共输入" << i << "个学生    平均成绩" << ave << "分\n\n";
     cout << "其中低于平均成绩的学生有：";
     for (int j = 0; j < i; j++) {
-        if (x\[j\] < ave) {
-            cout << "第" << j+1 << "个学生    " << x\[j\] << "分\\n";
+        if (x[j] < ave) {
+            cout << "第" << j+1 << "个学生    " << x[j] << "分\n";
         }
     }
     system("pause");
 }
+```
 
    
 
@@ -301,26 +319,32 @@ void main()
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 #define N 10
 using namespace std;
 void main()
 {
-    int a\[N\]\[N\];
+    int a[N][N];
     for (int i = 0; i < N; i++) {
         for (int j = 0; j <= i; j++) {
             if (j == 0 || j == i) {
-                a\[i\]\[j\] = 1;
+                a[i][j] = 1;
             }
             else {
-                a\[i\]\[j\] = a\[i - 1\]\[j\] + a\[i - 1\]\[j - 1\];
+                a[i][j] = a[i - 1][j] + a[i - 1][j - 1];
             }
-            cout << a\[i\]\[j\] << setw(10);
+            cout << a[i][j] << setw(10);
         }
-        cout << "\\n";
+        cout << "\n";
     }
     system("pause");
 }
+```
 
-      2016年3月
+      
+
+
+
+2016年3月

@@ -18,11 +18,11 @@ _所有代码均由Microsoft Visual Studio 2015编译通过_      
 #include<iostream>
 #include<iomanip>
 using namespace std;
-int maxSubSum(int a\[\], int n)
+int maxSubSum(int a[], int n)
 {
     int thisSum = 0, maxSum = 0;
     for (int i = 0; i < n; i++) {
-        thisSum += a\[i\];
+        thisSum += a[i];
         if (thisSum > maxSum) {
             maxSum = thisSum;
         }
@@ -35,15 +35,15 @@ int maxSubSum(int a\[\], int n)
 void main()
 {
     int n, *a, sum;
-    cout << "请输入数列长度：\\n";
+    cout << "请输入数列长度：\n";
     cin >> n;
-    a = new int\[n\];
-    cout << "请输入数列：\\n";
+    a = new int[n];
+    cout << "请输入数列：\n";
     for (int i = 0; i < n; i++) {
-        cin >> a\[i\];
+        cin >> a[i];
     }
     sum = maxSubSum(a, n);
-    cout << "最大子列和为：" << sum << "\\n";
+    cout << "最大子列和为：" << sum << "\n";
     system("pause");
 }
 ```
@@ -58,15 +58,15 @@ void main()
 #include<iostream>
 #include<iomanip>
 using namespace std;
-int maxSubSumPrint(int a\[\], int n)
+int maxSubSumPrint(int a[], int n)
 {
     int thisSum = 0, maxSum = -1;
     int head, rear, flag = 0;
     int maxHead = 0, maxRear = n - 1;
     for (int i = 0; i < n; i++) {
-        thisSum += a\[i\];
+        thisSum += a[i];
         if (flag == 0) {
-            if (a\[i\] >= 0) {
+            if (a[i] >= 0) {
                 head = rear = i;
                 flag = 1;
             }
@@ -87,19 +87,19 @@ int maxSubSumPrint(int a\[\], int n)
     if (maxSum == -1) {
         maxSum = 0;
     }
-    cout << "最大子列和为：" << maxSum << "\\n";
-    cout << "最大子列头数字为" << a\[maxHead\] << "  尾数字为" << a\[maxRear\] << "\\n";
+    cout << "最大子列和为：" << maxSum << "\n";
+    cout << "最大子列头数字为" << a[maxHead] << "  尾数字为" << a[maxRear] << "\n";
     return maxSum;
 }
 void main()
 {
     int n, *a;
-    cout << "请输入数列长度：\\n";
+    cout << "请输入数列长度：\n";
     cin >> n;
-    a = new int\[n\];
-    cout << "请输入数列：\\n";
+    a = new int[n];
+    cout << "请输入数列：\n";
     for (int i = 0; i < n; i++) {
-        cin >> a\[i\];
+        cin >> a[i];
     }
     maxSubSumPrint(a, n);
     system("pause");
@@ -129,7 +129,7 @@ PolyNode* inputPoly(int n) {
     }
     PolyNode *poly = new PolyNode;
     PolyNode *p = NULL;
-    cout << "请以指数递降顺序输入各项系数与指数（以空格分开）：\\n";
+    cout << "请以指数递降顺序输入各项系数与指数（以空格分开）：\n";
     p = poly;
     cin >> p->coef;
     cin >> p->expo;
@@ -222,23 +222,23 @@ void printPoly(PolyNode* p)
     if (!flag) {
         cout << "0 0";
     }
-    cout << "\\n";
+    cout << "\n";
 }
 void main()
 {
     int n1, n2;
     PolyNode \*p1, \*p2, \*padd, \*pmult;
-    cout << "请输入第一个多项式非零项项数：\\n";
+    cout << "请输入第一个多项式非零项项数：\n";
     cin >> n1;
     p1 = inputPoly(n1);
-    cout << "请输入第二个多项式非零项项数：\\n";
+    cout << "请输入第二个多项式非零项项数：\n";
     cin >> n2;
     p2 = inputPoly(n2);
     padd = add(p1, p2);
     pmult = mult(p1, p2);
-    cout << "和多项式的非零项为：\\n";
+    cout << "和多项式的非零项为：\n";
     printPoly(padd);
-    cout << "乘积多项式的非零项为：\\n";
+    cout << "乘积多项式的非零项为：\n";
     printPoly(pmult);
     system("pause");
 }
@@ -260,32 +260,32 @@ public:
     int Data;
     int Next;
 };
-void input(Node a\[\], int n)
+void input(Node a[], int n)
 {
     int i;
     for (int j = 0; j < n; j++) {
         cin >> i;
-        cin >> a\[i\].Data >> a\[i\].Next;
+        cin >> a[i].Data >> a[i].Next;
     }
 }
-int count(Node a\[\], int h)
+int count(Node a[], int h)
 {
     int i = 0, p = h;
     while (p != -1)
     {
         i++;
-        p = a\[p\].Next;
+        p = a[p].Next;
     }
     return i;
 }
-void reverse(Node a\[\], int& h, int k)
+void reverse(Node a[], int& h, int k)
 {
     int n, i = 0;
     n = count(a, h);
     int p, h1, h2, t1, t2;
     p = h1 = h2 = h;
-    t1 = a\[p\].Next;
-    t2 = a\[t1\].Next;
+    t1 = a[p].Next;
+    t2 = a[t1].Next;
     while (++i)
     {
         if (i > n / k) {
@@ -293,46 +293,46 @@ void reverse(Node a\[\], int& h, int k)
         }
         for (int j = 0; j < k - 1; j++)
         {
-            a\[t1\].Next = p;
+            a[t1].Next = p;
             p = t1;
             t1 = t2;
-            t2 = a\[t2\].Next;
+            t2 = a[t2].Next;
         }
         if (i == 1)
         {
             h = p;
         }
         else {
-            a\[h1\].Next = p;
+            a[h1].Next = p;
             h1 = h2;
         }
         p = t1;
         t1 = t2;
-        t2 = a\[t2\].Next;
+        t2 = a[t2].Next;
         h2 = p;
     }
-    a\[h1\].Next = p;
+    a[h1].Next = p;
 }
-void print(Node a\[\], int h)
+void print(Node a[], int h)
 {
     int p = h;
-    while (p != -1 && a\[p\].Next != -1) {
-        cout << setfill('0') << setw(5) << p << ' ' << a\[p\].Data << ' ' << setw(5) << a\[p\].Next << '\\n';
-        p = a\[p\].Next;
+    while (p != -1 && a[p].Next != -1) {
+        cout << setfill('0') << setw(5) << p << ' ' << a[p].Data << ' ' << setw(5) << a[p].Next << '\n';
+        p = a[p].Next;
     }
-    if (a\[p\].Next == -1) {
-        cout << setfill('0') << setw(5) << p << ' ' << a\[p\].Data << ' ' << a\[p\].Next << '\\n';
+    if (a[p].Next == -1) {
+        cout << setfill('0') << setw(5) << p << ' ' << a[p].Data << ' ' << a[p].Next << '\n';
     }
 }
 void main()
 {
     int head, n, k;
-    Node Memory\[100000\];
-    cout << "请输入头地址、节点总数、反转单位长度：\\n";
+    Node Memory[100000];
+    cout << "请输入头地址、节点总数、反转单位长度：\n";
     cin >> head >> n >> k;
     input(Memory, n);
     reverse(Memory, head, k);
-    cout << "反转后结果：\\n";
+    cout << "反转后结果：\n";
     print(Memory, head);
     system("pause");
 }
@@ -405,18 +405,18 @@ void main()
     int m, n, k;
     cin >> m >> n >> k;
     int *result;
-    result = new int\[k\];
+    result = new int[k];
     for (int i = 0; i < k; i++)
     {
-        result\[i\] = check(m, n);
+        result[i] = check(m, n);
     }
     for (int i = 0; i < k; i++)
     {
-        switch (result\[i\])
+        switch (result[i])
         {
-        case 0:cout << "NO\\n";
+        case 0:cout << "NO\n";
             break;
-        case 1:cout << "YES\\n";
+        case 1:cout << "YES\n";
             break;
         }
     }
@@ -454,36 +454,36 @@ int input(Node *&a)
         a = NULL;
         return -1;
     }
-    a = new Node\[n\];
+    a = new Node[n];
     for (int i = 0; i < n; i++)
     {
-        cin >> a\[i\].data >> left >> right;
-        a\[i\].isRoot = 1;
+        cin >> a[i].data >> left >> right;
+        a[i].isRoot = 1;
         if (left == '-') {
-            a\[i\].left = -1;
+            a[i].left = -1;
         }
         else {
-            a\[i\].left = int(left) - 48;
+            a[i].left = int(left) - 48;
         }
         if (right == '-') {
-            a\[i\].right = -1;
+            a[i].right = -1;
         }
         else {
-            a\[i\].right = int(right) - 48;
+            a[i].right = int(right) - 48;
         }
     }
     for (int i = 0; i < n; i++)
     {
-        if (a\[i\].left != -1) {
-            a\[a\[i\].left\].isRoot = 0;
+        if (a[i].left != -1) {
+            a[a[i].left].isRoot = 0;
         }
-        if (a\[i\].right != -1) {
-            a\[a\[i\].right\].isRoot = 0;
+        if (a[i].right != -1) {
+            a[a[i].right].isRoot = 0;
         }
     }
     for (int i = 0; i < n; i++)
     {
-        if (a\[i\].isRoot) {
+        if (a[i].isRoot) {
             root = i;
         }
     }
@@ -503,14 +503,14 @@ int compare(Node* a, Node* b, int aRoot, int bRoot)
     else if (aRoot == -1 || bRoot == -1) {
         return 0;
     }
-    else if (a\[aRoot\].data != b\[bRoot\].data) {
+    else if (a[aRoot].data != b[bRoot].data) {
         return 0;
     }
-    else if (compare(a, b, a\[aRoot\].left, b\[bRoot\].left)) {
-        return compare(a, b, a\[aRoot\].right, b\[bRoot\].right);
+    else if (compare(a, b, a[aRoot].left, b[bRoot].left)) {
+        return compare(a, b, a[aRoot].right, b[bRoot].right);
     }
-    else if (compare(a, b, a\[aRoot\].left, b\[bRoot\].right)) {
-        return compare(a, b, a\[aRoot\].right, b\[bRoot\].left);
+    else if (compare(a, b, a[aRoot].left, b[bRoot].right)) {
+        return compare(a, b, a[aRoot].right, b[bRoot].left);
     }
     else {
         return 0;
@@ -570,39 +570,39 @@ int input(Node *&a)
         a = NULL;
         return -1;
     }
-    a = new Node\[n\];
+    a = new Node[n];
     for (int i = 0; i < n; i++)
     {
         cin >> left >> right;
-        a\[i\].isRoot = 1;
-        a\[i\].isLeaf = 1;
+        a[i].isRoot = 1;
+        a[i].isLeaf = 1;
         if (left == '-') {
-            a\[i\].left = -1;
+            a[i].left = -1;
         }
         else {
-            a\[i\].left = int(left) - int('0');
+            a[i].left = int(left) - int('0');
         }
         if (right == '-') {
-            a\[i\].right = -1;
+            a[i].right = -1;
         }
         else {
-            a\[i\].right = int(right) - int('0');
+            a[i].right = int(right) - int('0');
         }
     }
     for (int i = 0; i < n; i++)
     {
-        if (a\[i\].left != -1) {
-            a\[a\[i\].left\].isRoot = 0;
-            a\[i\].isLeaf = 0;
+        if (a[i].left != -1) {
+            a[a[i].left].isRoot = 0;
+            a[i].isLeaf = 0;
         }
-        if (a\[i\].right != -1) {
-            a\[a\[i\].right\].isRoot = 0;
-            a\[i\].isLeaf = 0;
+        if (a[i].right != -1) {
+            a[a[i].right].isRoot = 0;
+            a[i].isLeaf = 0;
         }
     }
     for (int i = 0; i < n; i++)
     {
-        if (a\[i\].isRoot) {
+        if (a[i].isRoot) {
             root = i;
         }
     }
@@ -628,7 +628,7 @@ void printLeaf(Node *tree, int root) {
     enqueue(root, rear);
     while (front != rear) {
         a = dequeue(front);
-        if (tree\[a\].isLeaf) {
+        if (tree[a].isLeaf) {
             if (!flag) {
                 cout << a;
                 flag = 1;
@@ -637,11 +637,11 @@ void printLeaf(Node *tree, int root) {
                 cout << ' ' << a;
             }
         }
-        if (tree\[a\].left != -1) {
-            enqueue(tree\[a\].left, rear);
+        if (tree[a].left != -1) {
+            enqueue(tree[a].left, rear);
         }
-        if (tree\[a\].right != -1) {
-            enqueue(tree\[a\].right, rear);
+        if (tree[a].right != -1) {
+            enqueue(tree[a].right, rear);
         }
     }
 }

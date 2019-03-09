@@ -12,6 +12,7 @@ _所有代码均由Microsoft Visual Studio 2015编译通过_      
 
 #### 递归法实现二叉树的三种遍历
 
+```c++
  
 
 #include<iostream>
@@ -146,30 +147,34 @@ void main()
 {
     int n, a, res;
     treeNode* root = NULL;
-    cout << "请输入二叉树结点总数：\\n";
+    cout << "请输入二叉树结点总数：\n";
     cin >> n;
-    cout << "请依次输入结点数字：\\n";
+    cout << "请依次输入结点数字：\n";
     for (int i = 0; i < n; i++) {
         cin >> a;
         res = incertNode(a, root);
-        cout << (res ? "插入成功\\n" : "数据重复\\n");
+        cout << (res ? "插入成功\n" : "数据重复\n");
     }
-    cout << "二叉树构建完毕，高度为：" << height(root) << '\\n';
-    cout << "\\n前序遍历：\\n";
+    cout << "二叉树构建完毕，高度为：" << height(root) << '\n';
+    cout << "\n前序遍历：\n";
     preorderTraverse(root);
-    cout << "\\n中序遍历：\\n";
+    cout << "\n中序遍历：\n";
     inorderTraverse(root);
-    cout << "\\n后序遍历：\\n";
+    cout << "\n后序遍历：\n";
     postorderTraverse(root);
     system("pause");
 }
 
    
+```
+
+
 
 #### 非递归法实现二叉树的中序遍历
 
  
 
+```c++
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -312,24 +317,28 @@ void main()
 {
     int n, a, res;
     treeNode* root = NULL;
-    cout << "请输入二叉树结点总数：\\n";
+    cout << "请输入二叉树结点总数：\n";
     cin >> n;
-    cout << "请依次输入结点数字：\\n";
+    cout << "请依次输入结点数字：\n";
     for (int i = 0; i < n; i++) {
         cin >> a;
         res = incertNode(a, root);
-        cout << (res ? "插入成功\\n" : "数据重复\\n");
+        cout << (res ? "插入成功\n" : "数据重复\n");
     }
-    cout << "二叉树构建完毕，高度为：" << height(root) << '\\n';
-    cout << "\\n中序遍历：\\n";
+    cout << "二叉树构建完毕，高度为：" << height(root) << '\n';
+    cout << "\n中序遍历：\n";
     inorderTraverse(root);
     system("pause");
 }
 
    
+```
+
+
 
 #### 平衡二叉树的插入、删除、查找
 
+```c++
  
 
 #include<iostream>
@@ -491,40 +500,46 @@ void main()
 {
     int n, a, res;
     treeNode* root = NULL, *resP = NULL;
-    cout << "请输入二叉树结点总数：\\n";
+    cout << "请输入二叉树结点总数：\n";
     cin >> n;
-    cout << "请依次输入结点数字：\\n";
+    cout << "请依次输入结点数字：\n";
     for (int i = 0; i < n; i++) {
         cin >> a;
         res = incertNode(a, root);
-        cout << (res ? "插入成功\\n" : "数据重复\\n");
+        cout << (res ? "插入成功\n" : "数据重复\n");
     }
-    cout << "二叉树构建完毕，高度为：" << height(root) << '\\n';
-    cout << "请输入要删除的结点个数：\\n";
+    cout << "二叉树构建完毕，高度为：" << height(root) << '\n';
+    cout << "请输入要删除的结点个数：\n";
     cin >> n;
-    cout << "请依次输入结点数字：\\n";
+    cout << "请依次输入结点数字：\n";
     for (int i = 0; i < n; i++) {
         cin >> a;
         res = deleteNode(a, root);
-        cout << (res ? "删除成功\\n" : "查无此数\\n");
+        cout << (res ? "删除成功\n" : "查无此数\n");
     }
-    cout << "删除完毕，高度为：" << height(root) << '\\n';
-    cout << "请输入要查找的结点个数：\\n";
+    cout << "删除完毕，高度为：" << height(root) << '\n';
+    cout << "请输入要查找的结点个数：\n";
     cin >> n;
-    cout << "请依次输入结点数字：\\n";
+    cout << "请依次输入结点数字：\n";
     for (int i = 0; i < n; i++) {
         cin >> a;
         resP = find(a, root);
-        cout << (resP ? "已找到\\n" : "未找到\\n");
+        cout << (resP ? "已找到\n" : "未找到\n");
     }
     system("pause");
 }
 
    
+```
+
+
 
 #### 最小堆的插入与删除
 
  
+
+```c++
+
 
 #include<iostream>
 #include<iomanip>
@@ -535,39 +550,39 @@ class Heap
 {
 public:
     int size;
-    int a\[N\];
+    int a[N];
 };
 void checkOdd(Heap& minHeap)
 {
     if (!(minHeap.size % 2)) {
-        minHeap.a\[minHeap.size + 1\] = MAX;
+        minHeap.a[minHeap.size + 1] = MAX;
     }
 }
 void incertMinHeap(int a, Heap& minHeap)
 {
     int hole = ++minHeap.size;
-    while (hole != 1 && a < minHeap.a\[hole / 2\]) {
-        minHeap.a\[hole\] = minHeap.a\[hole / 2\];
+    while (hole != 1 && a < minHeap.a[hole / 2]) {
+        minHeap.a[hole] = minHeap.a[hole / 2];
         hole = hole / 2;
     }
-    minHeap.a\[hole\] = a;
+    minHeap.a[hole] = a;
     checkOdd(minHeap);
 }
 int deleteMin(Heap& minHeap)
 {
-    int min = minHeap.a\[1\];
+    int min = minHeap.a[1];
     int hole = 1;
-    while (hole <= minHeap.size / 2 && (minHeap.a\[minHeap.size\] > minHeap.a\[hole * 2 + 1\] || minHeap.a\[minHeap.size\] > minHeap.a\[hole * 2\])) {
-        if (minHeap.a\[hole * 2 + 1\] < minHeap.a\[hole * 2\]) {
-            minHeap.a\[hole\] = minHeap.a\[hole * 2 + 1\];
+    while (hole <= minHeap.size / 2 && (minHeap.a[minHeap.size] > minHeap.a[hole * 2 + 1] || minHeap.a[minHeap.size] > minHeap.a[hole * 2])) {
+        if (minHeap.a[hole * 2 + 1] < minHeap.a[hole * 2]) {
+            minHeap.a[hole] = minHeap.a[hole * 2 + 1];
             hole = hole * 2 + 1;
         }
         else {
-            minHeap.a\[hole\] = minHeap.a\[hole * 2\];
+            minHeap.a[hole] = minHeap.a[hole * 2];
             hole = hole * 2;
         }
     }
-    minHeap.a\[hole\] = minHeap.a\[minHeap.size\];
+    minHeap.a[hole] = minHeap.a[minHeap.size];
     minHeap.size--;
     checkOdd(minHeap);
     return min;
@@ -577,21 +592,26 @@ void main()
     int n, a;
     Heap minHeap;
     minHeap.size = 0;
-    cout << "请输入最小堆结点个数（100以内）：\\n";
+    cout << "请输入最小堆结点个数（100以内）：\n";
     cin >> n;
-    cout << "请依次输入结点数字：\\n";
+    cout << "请依次输入结点数字：\n";
     for (int i = 0; i < n; i++) {
         cin >> a;
         incertMinHeap(a, minHeap);
-        cout << "已插入第" << i + 1 << "个数\\n";
+        cout << "已插入第" << i + 1 << "个数\n";
     }
-    cout << "请输入要查看从小到大排列的前几个数：\\n";
+    cout << "请输入要查看从小到大排列的前几个数：\n";
     cin >> n;
     for (int i = 0; i < n; i++) {
         a = deleteMin(minHeap);
-        cout << "第" << i + 1 << "小的数为：" << a << "\\n";
+        cout << "第" << i + 1 << "小的数为：" << a << "\n";
     }
     system("pause");
 }
+```
 
-      2016年3月
+      
+
+
+
+2016年3月
