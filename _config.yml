@@ -8,7 +8,7 @@ subtitle:
 description: WHAT A NICE DAY
 keywords:
 author: Diary
-language: zh-Hans
+language: en
 timezone:
 
 # URL
@@ -86,5 +86,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/DiaryChris/blog.git
+  repository: git@github.com:DiaryChris/blog.git
   branch: master

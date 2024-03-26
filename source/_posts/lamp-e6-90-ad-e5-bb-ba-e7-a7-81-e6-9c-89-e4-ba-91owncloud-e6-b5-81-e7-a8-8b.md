@@ -148,3 +148,20 @@ https://linuxtechlab.com/install-lamp-stack-on-ubuntu
 https://linux.cn/article-9418-1.html
 
 若有大佬对此文存在修改意见，或是配置过程中存在错误，请在评论区留言。
+
+
+
+------
+
+补充常用OCC命令：
+
+```
+sudo -u www-data php occ files:cleanup 
+```
+```
+sudo -u www-data php occ trashbin:cleanup 
+```
+```
+sudo -u www-data php occ versions:cleanup 
+```
+
